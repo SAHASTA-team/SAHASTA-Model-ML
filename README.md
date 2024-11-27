@@ -1,4 +1,4 @@
 # SAHASTA-Machine-Learning
 ML Repository
 
-**Dataset:** [Food Ingredients Image](https://drive.google.com/drive/folders/1FzvStKXQnSqKeB-vSVvG5_F8MppevOPj?usp=sharing) 
+**Dataset:** [Food Ingredients Images](https://www.kaggle.com/datasets/dewantinariswari/food-ingredients-images/data) 
