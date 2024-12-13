@@ -9,7 +9,6 @@ This project aims to develop a digital solution to address the issue of stunting
 - [Project Overview](#project-overview)
 - [Dataset](#dataset)
 - [Data Preprocessing](#data-preprocessing)
-- [Model Architecture](#model-architecture)
 - [Model Training and Optimization](#model-training-and-optimization)
 - [Model Deployment and Integration](#model-deployment-and-integration)
 - [Usage](#usage)
@@ -18,20 +17,18 @@ This project aims to develop a digital solution to address the issue of stunting
 
 ## Dataset
 
-The dataset used in this project is obtained from [Fruit and Vegetable Classification](https://www.kaggle.com/code/abdelrahman16/fruit-and-vegetable-classification/input). The included food items are:
-
-- **Fruits:** Banana, Apple, Pear, Grapes, Orange, Kiwi, Watermelon, Pomegranate, Pineapple, Mango
-- **Vegetables:** Cucumber, Carrot, Capsicum, Onion, Potato, Lemon, Tomato, Radish, Beetroot, Cabbage, Lettuce, Spinach, Soybean, Cauliflower, Bell Pepper, Chilli Pepper, Turnip, Corn, Sweetcorn, Sweet Potato, Paprika, Jalapeño, Ginger, Garlic, Peas, Eggplant
+The dataset used in this project is obtained from [Food Dataset](https://drive.google.com/file/d/1ev9u5wgkyas7D1FS3o-ObmrLyu1K6-PX/view?usp=drivesdk). The included food items are: avocado, grapes, apple, spinach, broccoli, chicken, corn, orange, potato, cabbage, pumpkin, mango, melon, rice, papaya, banana, strawberry, tofu, egg, and tomato.
 
 The dataset is divided into three main directories:
 
 - **Training Data**: `train` directory
 - **Validation Data**: `valid` directory
-- **Test Data**: `test` directory (moved to validation during preprocessing)
+
+While the nutrition information is obtained from [Nutrition Dataset](https://drive.google.com/file/d/1jixKLnexcz37pgkchiq7ZuWQguM9gNs6/view). The included nutrition items are: calcium, protein, carbohydrate, fat, calorie.
 
 ## Data Preprocessing
 
-We've curated a diverse dataset containing images of various food items. This dataset, sourced from Kaggle, includes a wide range of food categories, such as fruits and vegetables (36 Class)
+We've curated a diverse dataset containing images of various food items. This dataset, sourced from Image Scraping, includes a wide range of food categories (20 Class)
 
 To enhance the model's performance and generalization capabilities, we've implemented the following data preprocessing techniques:
 
@@ -39,31 +36,14 @@ To enhance the model's performance and generalization capabilities, we've implem
 
 **2. Image Normalization:** Pixel values are normalized to a specific range (e.g., 0-1) to ensure consistent input for the model.
 
-**3. Data Augmentation:** To increase the dataset's size and diversity, we apply various augmentation techniques:
-  - **Random Rotations:** Images are rotated randomly to introduce variations.
-  - **Random Flips:** Images are flipped horizontally or vertically to create new perspectives.
-  - **Random Cropping:** Random crops are taken from the original images to expose different parts of the food item.
-  - **Color Jitter:** Random variations in color (brightness, contrast, saturation, hue) are applied to simulate real-world lighting conditions.
-  - **Noise Addition:** Small amounts of noise are added to the images to make the model more robust to variations.
-
-## Model Architecture
-
-
-
 ## Model Training and Optimization
 To train our model effectively, we've employed the following techniques:
 
 Optimizer and Loss Function
-- **Optimizer**: Adam optimizer with a learning rate of 0.001 is used to efficiently update model weights.
-- **Loss Function**: Sparse Categorical Crossentropy is chosen as the loss function to measure the model's prediction accuracy.
+- **Loss Function**: Categorical Crossentropy is chosen as the loss function to measure the model's prediction accuracy.
 
 Performance Metrics
 - **Metrics**: We monitor accuracy to assess the model's ability to correctly classify food images.
-
-Callbacks for Improved Training
-- **Model Checkpoint:** The best performing model is saved during training to prevent overfitting.
-- **Early Stopping:** Training is stopped if validation accuracy doesn't improve for a certain number of epochs.
-- **Learning Rate Reduction:** The learning rate is dynamically adjusted to avoid local minima and accelerate convergence.
 
 ## Model Deployment and Integration
 
@@ -90,7 +70,7 @@ Here's how to get started with the model:
    git clone https://github.com/dantidn/SAHASTA-Machine-Learning.git
 2. **Set Up Your Environment:** Make sure you have the necessary libraries installed. You can do this in Google Colab or your Jupyter Notebook.
    ```sh
-    pip install tensorflow pandas numpy opencv-python matplotlib
+    pip install tensorflow pandas numpy-python matplotlib
 3. **Explore the Models:** Navigate to the Notebooks directory within the repository. You'll find notebooks that guide you through training and evaluating the models.
 4. **Train and Evaluate:** Open the relevant notebook and run the code cells one by one. This will train the model and show you how well it performs.
 5. **Save Your Work:** Once you're happy with the trained model, save it for later use. You can do this by running the provided code to save it as model.h5.
